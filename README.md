@@ -1,1 +1,1 @@
-# ArjunChakrawal-Stoichiometry-and-Thermodynamics
+# Stoichiometry-and-Thermodynamics
