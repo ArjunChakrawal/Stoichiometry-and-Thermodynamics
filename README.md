@@ -1,7 +1,7 @@
 # Interacting bioenergetic and stoichiometric controls on microbial growth
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ArjunChakrawal/Stoichiometry-and-Thermodynamics/HEAD) 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
-[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%@ArjunChakrawal)](https://twitter.com/ArjunChakrawal)
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20@ArjunChakrawal)](https://twitter.com/ArjunChakrawal)
 
 This reository contains python code used to create all the figure in the accompanying manuscript.
 
