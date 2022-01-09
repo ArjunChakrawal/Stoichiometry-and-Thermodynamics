@@ -2,11 +2,13 @@
 """
 Created on Thu Dec 30 15:35:20 2021
 
-@author: arch9809
+@author: Arjun Chakrawal
+arjun.chakrawal@natgeo.su.se
+chakrawalarjun9105@gmail.com
+https://twitter.com/ArjunChakrawal
 """
 # %%
 import os
-
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
@@ -199,11 +201,6 @@ INORM = (
 delta_psi = 120 * 0.001  # volt # Membrane potential
 R = 8.314  # J/ mol K , Gas constant
 FaradayC = 96.48534  # Coulomb per mol e or kJ/ volt, faraday constant
-
-# if 7~=exist('/fig', 'dir')
-#    mkdir('/fig')
-# end
-
 
 # %% [markdown]
 # # Figure 2 matplotllib
@@ -523,7 +520,7 @@ CNS = np.append(CNS, np.arange(21, 1001, 1))
 
 gamma_S = np.arange(1, 7, 1)
 NS = "NH4"
-fig = plt.figure(figsize=(6, 5), facecolor="w")
+fig = plt.figure(figsize=(7, 5), facecolor="w")
 ax = plt.axes()
 for j in range(0, len(INORM)):
     Gnorm = np.zeros((len(CNS), 1))
@@ -776,7 +773,7 @@ axs[0].plot(axs[0].get_xlim(), [0, 0], "--", linewidth=1, color="k")
 
 axs[0].set_xlabel(r"$\gamma_{ED}$", fontsize=labelfont)
 axs[1].set_xlabel(r"$\gamma_{ED}$", fontsize=labelfont)
-
+axs[2].set_xlabel(r"$\gamma_{ED}$", fontsize=labelfont)
 axs[0].set_ylabel(
     r"$ \Delta_{cat}G_{ED}$  kJ $\mathrm{(C mol \ ED)^{-1}}$", fontsize=labelfont
 )
