@@ -9,3 +9,5 @@ To run the script in Binder click on the binder badge above. It would open a Jup
 Contact: [arjun.chakrawal@natgeo.su.se](mailto:arjun.chakrawal@natgeo.su.se), or [chakrawalarjun9105@gmail.com](mailto:chakrawalarjun9105@gmail.com) 
 
 [Twitter](https://twitter.com/ArjunChakrawal)
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40cloudposse)](https://twitter.com/cloudposse)
+
