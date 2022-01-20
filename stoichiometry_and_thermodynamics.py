@@ -24,9 +24,8 @@ plt.style.use("ggplot")
 
 # %%
 if not os.path.exists("fig"):
-    os.makedir("fig/png")
-    os.makedir("fig/svg")
-    
+    os.makedirs("fig/png")
+    os.makedirs("fig/svg")
 
 
 # %% [markdown]
@@ -503,8 +502,8 @@ axs[0].add_artist(leg1)
 axs[0].text(0.0, 1.05, "(A)", transform=axs[0].transAxes, fontsize=labelfont)
 axs[1].text(0.0, 1.05, "(B)", transform=axs[1].transAxes, fontsize=labelfont)
 fig.tight_layout()
-fig.savefig("fig/png/FigureA1.png", dpi=300)
-fig.savefig("fig/svg/FigureA1.svg", dpi=300)
+fig.savefig("fig/png/FigureS1.png", dpi=300)
+fig.savefig("fig/svg/FigureS1.svg", dpi=300)
 plt.show()
 
 
@@ -847,8 +846,8 @@ axs[2].legend(
     fontsize=labelfont - 2,
 )
 
-fig.savefig("fig/svg/FigureA2.svg", dpi=300)
-fig.savefig("fig/png/FigureA2.png", dpi=300)
+fig.savefig("fig/svg/FigureS2.svg", dpi=300)
+fig.savefig("fig/png/FigureS2.png", dpi=300)
 plt.show()
 
 
@@ -976,8 +975,8 @@ for col in range(0, len(INORM)):
         txt[col] + "\n" + r"$I_{norm} =" + str(INORM[col]) + "$", fontsize=labelfont - 2
     )
 fig.tight_layout()
-fig.savefig("fig/png/FigureA3.png", dpi=300)
-fig.savefig("fig/svg/FigureA3.svg", dpi=300)
+fig.savefig("fig/png/FigureS3.png", dpi=300)
+fig.savefig("fig/svg/FigureS3.svg", dpi=300)
 plt.show()
 
 
@@ -1086,8 +1085,8 @@ axs[0].legend(
 )
 axs[0].add_artist(leg1)
 fig.tight_layout()
-fig.savefig("fig/png/FigureA4.png", dpi=300)
-fig.savefig("fig/svg/FigureA4.svg", dpi=300)
+fig.savefig("fig/png/FigureS_not_included.png", dpi=300)
+fig.savefig("fig/svg/FigureS_not_included.svg", dpi=300)
 plt.show()
 
 
@@ -1138,8 +1137,8 @@ for i in range(0, len(INORM)):
 ax.legend(lhlist, lstr, loc="upper right", frameon=False)
 ax.add_artist(leg1)
 ax.grid(True, which="both")
-fig.savefig("fig/png/FigureA5.png", dpi=300)
-fig.savefig("fig/svg/FigureA5.svg", dpi=300)
+fig.savefig("fig/png/FigureS4.png", dpi=300)
+fig.savefig("fig/svg/FigureS4.svg", dpi=300)
 plt.show()
 
 
@@ -1292,6 +1291,6 @@ axs[3][0].text(
 )
 
 fig.tight_layout()
-fig.savefig("fig/png/FigureA6.png", dpi=300)
-fig.savefig("fig/svg/FigureA6.svg", dpi=300)
+fig.savefig("fig/png/FigureS5.png", dpi=300)
+fig.savefig("fig/svg/FigureS5.svg", dpi=300)
 plt.show()
