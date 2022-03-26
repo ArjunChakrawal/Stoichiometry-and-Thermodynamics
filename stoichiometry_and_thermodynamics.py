@@ -9,7 +9,7 @@ https://twitter.com/ArjunChakrawal
 """
 # %%
 import os
-import matplotlib as mpl
+# import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import cm
@@ -24,7 +24,7 @@ plt.style.use("ggplot")
 
 # %%
 if not os.path.exists("fig"):
-    os.makedirs("fig/png")
+    os.makedirs("fig/tif")
     os.makedirs("fig/svg")
 
 
@@ -206,7 +206,7 @@ FaradayC = 96.48534  # Coulomb per mol e or kJ/ volt, faraday constant
 
 # %%
 gamma = np.arange(0.5, 8 + 0.05, 0.05)
-dGred = -np.array([5, 24.04, 40, 75.6, 85, 122.7])
+dGred = -np.array([5.0, 24.0, 40.0, 75.6, 85.0, 122.7])
 # dGred = -np.array([122])
 dGrX = np.zeros((len(gamma)))
 dCGX = dCG_O2(gamma_B)
@@ -237,7 +237,7 @@ axs.set_ylim(bottom=0)
 
 axs.tick_params(axis="x", labelsize=axisfont)
 axs.tick_params(axis="y", labelsize=axisfont)
-axs.set_xlabel(r"$\gamma_{ED}$", fontsize=labelfont)
+axs.set_xlabel(r"$\gamma_{OM}$", fontsize=labelfont)
 
 axs.legend(
     loc="upper left",
@@ -248,16 +248,16 @@ axs.legend(
     title_fontsize=labelfont,
 )
 
-# axs.text(2.3, 0.6175, r"($\mathrm{{SO_4}^{2-}}$)", fontsize=labelfont - 4)
-# axs.text(2.2, 0.5, r"(goethite)", fontsize=labelfont - 4)
-# axs.text(2.3, 0.385, r"($\mathrm{O_2}$)", fontsize=labelfont - 4)
+axs.text(2.3, 0.595, r"($\mathrm{{SO_4}^{2-}}$)", fontsize=labelfont - 4)
+axs.text(2.3, 0.490, r"(goethite)", fontsize=labelfont - 4)
+axs.text(2.3, 0.38, r"($\mathrm{O_2}$)", fontsize=labelfont - 4)
 
-
+    
 axs.set_ylabel(r"$G_{norm} = e$", fontsize=labelfont)
 
 fig.tight_layout()
-fig.savefig("fig/png/Figure2.png", dpi=300)
-fig.savefig("fig/svg/Figure2.svg", dpi=300)
+fig.savefig("fig/tif/Figure3.tif", dpi=300)
+fig.savefig("fig/svg/Figure3.svg", dpi=300)
 plt.show()
 
 
@@ -287,7 +287,7 @@ for m in range(0, len(NS)):
             lstyle[m],
             linewidth=3,
             color=LC[j],
-            label=r"{$\gamma_{ED}}$ = " + str(gamma_S[j]),
+            label=r"{$\gamma_{OM}}$ = " + str(gamma_S[j]),
         )
 # ax.set(xlabel = r'${I_{norm}}$', ylabel=r'$G_{norm}}$')
 
@@ -296,7 +296,7 @@ plt.xlabel(r"${I_{norm}}$", fontsize=labelfont)
 
 lstr = []
 for i in gamma_S:
-    lstr.append(r"$\gamma_{ED} =" + str(i) + "$")
+    lstr.append(r"$\gamma_{OM} =" + str(i) + "$")
 leg1 = ax.legend(lstr, loc="best", frameon=False, fontsize=labelfont - 4)
 ax.text(0.7, 1.05, "C limited", transform=ax.transAxes, fontsize=labelfont)
 ax.text(0.1, 0.35, "N limited", transform=ax.transAxes, rotation=45, fontsize=labelfont)
@@ -317,8 +317,8 @@ ax.legend(
 ax.add_artist(leg1)
 
 fig.tight_layout()
-fig.savefig("fig/png/Figure3.png", dpi=300)
-fig.savefig("fig/svg/Figure3.svg", dpi=300)
+fig.savefig("fig/tif/Figure4.tif", dpi=300)
+fig.savefig("fig/svg/Figure4.svg", dpi=300)
 plt.show()
 
 
@@ -414,14 +414,14 @@ axs[0].add_artist(leg1)
 # axs[1].text('Black lines = $G_{C, norm}$ and Colored lines = $G_{N, norm}$', fontsize=labelfont)
 
 axs[0].set_ylabel(r"${G_{norm}}$", fontsize=labelfont + 6)
-axs[0].set_xlabel(r"${\gamma_{ED}}$", fontsize=labelfont + 6)
-axs[1].set_xlabel(r"${\gamma_{ED}}$", fontsize=labelfont + 6)
+axs[0].set_xlabel(r"${\gamma_{OM}}$", fontsize=labelfont + 6)
+axs[1].set_xlabel(r"${\gamma_{OM}}$", fontsize=labelfont + 6)
 
 axs[0].text(0.0, 1.05, "(A)", transform=axs[0].transAxes, fontsize=labelfont)
 axs[1].text(0.0, 1.05, "(B)", transform=axs[1].transAxes, fontsize=labelfont)
 fig.tight_layout()
-fig.savefig("fig/png/Figure4.png", dpi=300)
-fig.savefig("fig/svg/Figure4.svg", dpi=300)
+fig.savefig("fig/tif/Figure5.tif", dpi=300)
+fig.savefig("fig/svg/Figure5.svg", dpi=300)
 plt.show()
 
 
@@ -459,8 +459,8 @@ axs[1].plot(gamma_S, e[:, 0], lstyle[0], linewidth=3, color="k", alpha=0.3)
 axs[1].plot(gamma_S, e[:, 1], lstyle[1], linewidth=3, color="k", alpha=0.3)
 
 axs[0].set_ylabel(r"${G_{norm}}$", fontsize=labelfont + 6)
-axs[0].set_xlabel(r"${\gamma_{ED}}$", fontsize=labelfont + 6)
-axs[1].set_xlabel(r"${\gamma_{ED}}$", fontsize=labelfont + 6)
+axs[0].set_xlabel(r"${\gamma_{OM}}$", fontsize=labelfont + 6)
+axs[1].set_xlabel(r"${\gamma_{OM}}$", fontsize=labelfont + 6)
 axs[1].set_ylabel(r"$G_{C, norm}$", fontsize=labelfont + 6)
 
 ax2 = axs[1].twinx()  # instantiate a second axes that shares the same x-axis
@@ -502,7 +502,7 @@ axs[0].add_artist(leg1)
 axs[0].text(0.0, 1.05, "(A)", transform=axs[0].transAxes, fontsize=labelfont)
 axs[1].text(0.0, 1.05, "(B)", transform=axs[1].transAxes, fontsize=labelfont)
 fig.tight_layout()
-fig.savefig("fig/png/FigureS1.png", dpi=300)
+fig.savefig("fig/tif/FigureS1.tif", dpi=300)
 fig.savefig("fig/svg/FigureS1.svg", dpi=300)
 plt.show()
 
@@ -534,7 +534,7 @@ for j in range(0, len(INORM)):
                 Gnorm[i] = np.minimum(emax_S, (emax_S / v_N) * INORM[j])
         ax.plot(CNS, Gnorm, linestyle=lstyle[j], linewidth=3, color=LC[m])
 plt.ylabel(r"${G_{norm}}$", fontsize=labelfont)
-plt.xlabel(r"${CN_{ED}}$", fontsize=labelfont)
+plt.xlabel(r"${CN_{OM}}$", fontsize=labelfont)
 plt.ylim([0.005, 1])
 plt.yscale("log")
 plt.xscale("log")
@@ -542,7 +542,7 @@ lhlist = []
 lstr = []
 for j in gamma_S:
     lstr.append(str(j))
-leg1 = ax.legend(lstr, loc="lower left", frameon=False, title=r"$\gamma_{ED}}$")
+leg1 = ax.legend(lstr, loc="lower left", frameon=False, title=r"$\gamma_{OM}}$")
 
 lstr = []
 for i in range(0, len(INORM)):
@@ -552,8 +552,8 @@ for i in range(0, len(INORM)):
 ax.legend(lhlist, lstr, loc="upper right", frameon=False)
 ax.add_artist(leg1)
 ax.grid(True, which="both")
-fig.savefig("fig/png/Figure5.png", dpi=300)
-fig.savefig("fig/svg/Figure5.svg", dpi=300)
+fig.savefig("fig/tif/Figure6.tif", dpi=300)
+fig.savefig("fig/svg/Figure6.svg", dpi=300)
 plt.show()
 
 # %% [markdown]
@@ -632,10 +632,10 @@ for i in range(len(axs)):
     axs[i][0].text(
         0.0, 1.05, fcaption[i], transform=axs[i][0].transAxes, fontsize=labelfont
     )
-axs[2][0].set_xlabel(r"$\gamma_{ED}$", fontsize=labelfont)
-axs[3][0].set_xlabel(r"$\gamma_{ED}$", fontsize=labelfont)
-axs[0][0].set_ylabel(r"$CN_{ED}$", fontsize=labelfont)
-axs[2][0].set_ylabel(r"$CN_{ED}$", fontsize=labelfont)
+axs[2][0].set_xlabel(r"$\gamma_{OM}$", fontsize=labelfont)
+axs[3][0].set_xlabel(r"$\gamma_{OM}$", fontsize=labelfont)
+axs[0][0].set_ylabel(r"$CN_{OM}$", fontsize=labelfont)
+axs[2][0].set_ylabel(r"$CN_{OM}$", fontsize=labelfont)
 
 axs[0][0].text(
     0.4, 0.8, "N limited", transform=axs[0][0].transAxes, fontsize=labelfont, color="w"
@@ -709,15 +709,15 @@ axs[3][0].text(
 plt.subplots_adjust(left=0.1, bottom=0.1, right=0.6, top=0.8)
 
 fig.tight_layout()
-fig.savefig("fig/png/Figure6.png", dpi=300)
-fig.savefig("fig/svg/Figure6.svg", dpi=300)
+fig.savefig("fig/tif/Figure7.tif", dpi=300)
+fig.savefig("fig/svg/Figure7.svg", dpi=300)
 
 plt.show()
 
 
 # %% [markdown]
 # #  Appendix
-# ## Figure A2
+# ## Figure S2
 #
 
 # %%
@@ -770,11 +770,11 @@ axs[0].set_ylim([-800, 200])
 axs[0].plot([1.88, 1.88], axs[0].get_ylim(), "--", linewidth=1, color="k")
 axs[0].plot(axs[0].get_xlim(), [0, 0], "--", linewidth=1, color="k")
 
-axs[0].set_xlabel(r"$\gamma_{ED}$", fontsize=labelfont)
-axs[1].set_xlabel(r"$\gamma_{ED}$", fontsize=labelfont)
-axs[2].set_xlabel(r"$\gamma_{ED}$", fontsize=labelfont)
+axs[0].set_xlabel(r"$\gamma_{OM}$", fontsize=labelfont)
+axs[1].set_xlabel(r"$\gamma_{OM}$", fontsize=labelfont)
+axs[2].set_xlabel(r"$\gamma_{OM}$", fontsize=labelfont)
 axs[0].set_ylabel(
-    r"$ \Delta_{cat}G_{ED}$  kJ $\mathrm{(C mol \ ED)^{-1}}$", fontsize=labelfont
+    r"$ \Delta_{cat}G_{OM}$  kJ $\mathrm{(C mol \ OM)^{-1}}$", fontsize=labelfont
 )
 
 axs[1].set_ylabel(r"$ \Delta_{r}G$", fontsize=labelfont)
@@ -794,7 +794,7 @@ axs[1].text(
 axs[1].text(
     0.1,
     0.95,
-    r" Solid lines = $ \Delta_{r}G_{ED}$",
+    r" Solid lines = $ \Delta_{r}G_{OM}$",
     transform=axs[1].transAxes,
     fontsize=labelfont - 2,
 )
@@ -840,148 +840,148 @@ for i in range(0, 2):
 
 axs[2].legend(
     lhlist,
-    [r"$ \Delta_{cat}G_{ED}$", "denominator Eq. (34)"],
+    [r"$ \Delta_{cat}G_{OM}$", "denominator Eq. (34)"],
     loc="lower left",
     frameon=False,
     fontsize=labelfont - 2,
 )
 
 fig.savefig("fig/svg/FigureS2.svg", dpi=300)
-fig.savefig("fig/png/FigureS2.png", dpi=300)
+fig.savefig("fig/tif/FigureS2.tif", dpi=300)
 plt.show()
 
 
 # %% [markdown]
-# # Figure A3
+# # Figure S3
 
 # %%
 
-eA = ["NO3", "Denitrification"]
+# eA = ["NO3", "Denitrification"]
 
 
-gamma_S = np.linspace(0.5, 8, 100)
+# gamma_S = np.linspace(0.5, 8, 100)
 
-# INORM = np.array([0.01,0.2,1.5])
-INORM = np.array([0.01, 0.1, 0.2, 0.5, 1.5])
-# INORM = np.array([0.005]) / 0.5
+# # INORM = np.array([0.01,0.2,1.5])
+# INORM = np.array([0.01, 0.1, 0.2, 0.5, 1.5])
+# # INORM = np.array([0.005]) / 0.5
 
-NS = "NO3"
-GG = []
-for j in range(0, len(INORM)):
-    G = []
-    for k in range(0, len(eA)):
-        Gnorm = np.zeros((len(CNS), len(gamma_S)))
-        for m in range(0, len(gamma_S)):
-            for i in range(0, len(CNS)):
-                [emax_S, YCO2, dGrS, xN, xEA, v_EA, v_N] = efficiency_CNED_Inf(
-                    gamma_S[m], T, eA[k], CNB, NS, CNS[i]
-                )
-                vN_met = (xN + xEA) * (1 - emax_S * gammaB / gamma_S[m])
-                Gnorm[i, m] = np.minimum(emax_S, (emax_S / vN_met) * INORM[j])
-        G.append(Gnorm)
-    GG.append(G)
-color_map = plt.cm.get_cmap("cividis")
-color_map = color_map.reversed()
-j = 0
-fig = plt.figure(figsize=(12, 7), facecolor="w")
-axs = fig.subplots(nrows=3, ncols=len(INORM), sharey="row", sharex="col")
-G = GG[j]
-Gnorm_diff = G[0] - G[1]  # Gnorm_diff = DNRA- Denitrification
-id = Gnorm_diff > 0
-Gnorm_diff_norm = Gnorm_diff
-Gnorm_diff_norm[:] = 0
-Gnorm_diff_norm[id] = 1
-[gY, CNX] = np.meshgrid(gamma_S, CNS)
-
-
-cs = axs[0, j].contourf(gY, CNX, G[0], cmap=color_map)
-axs[0, j].set_yscale("log")
-# v1= np.linspace(np.amin(G[0]), np.amax(G[0]),5)*1000
-v1 = np.linspace(5, 15, 5)
-norm = mpl.colors.Normalize(vmin=v1.min(), vmax=v1.max())
-cbar = fig.colorbar(cm.ScalarMappable(norm=norm, cmap=cs.cmap), ticks=v1, ax=axs[0, j])
-
-# cbar= fig.colorbar(cs,ax=axs[0,j])
-# v1=cbar.get_ticks()
-cbar.ax.set_yticklabels(["{:1.0f}".format(i) for i in v1])
-cbar.ax.set_title(r"         $\mathrm{x10^{-3}}$", fontsize=10)
+# NS = "NO3"
+# GG = []
+# for j in range(0, len(INORM)):
+#     G = []
+#     for k in range(0, len(eA)):
+#         Gnorm = np.zeros((len(CNS), len(gamma_S)))
+#         for m in range(0, len(gamma_S)):
+#             for i in range(0, len(CNS)):
+#                 [emax_S, YCO2, dGrS, xN, xEA, v_EA, v_N] = efficiency_CNED_Inf(
+#                     gamma_S[m], T, eA[k], CNB, NS, CNS[i]
+#                 )
+#                 vN_met = (xN + xEA) * (1 - emax_S * gammaB / gamma_S[m])
+#                 Gnorm[i, m] = np.minimum(emax_S, (emax_S / vN_met) * INORM[j])
+#         G.append(Gnorm)
+#     GG.append(G)
+# color_map = plt.cm.get_cmap("cividis")
+# color_map = color_map.reversed()
+# j = 0
+# fig = plt.figure(figsize=(12, 7), facecolor="w")
+# axs = fig.subplots(nrows=3, ncols=len(INORM), sharey="row", sharex="col")
+# G = GG[j]
+# Gnorm_diff = G[0] - G[1]  # Gnorm_diff = DNRA- Denitrification
+# id = Gnorm_diff > 0
+# Gnorm_diff_norm = Gnorm_diff
+# Gnorm_diff_norm[:] = 0
+# Gnorm_diff_norm[id] = 1
+# [gY, CNX] = np.meshgrid(gamma_S, CNS)
 
 
-cs = axs[1, j].contourf(gY, CNX, G[1], cmap=color_map)
-axs[1, j].set_yscale("log")
-# v1= np.linspace(np.amin(G[1]), np.amax(G[1]),5)*1000
-norm = mpl.colors.Normalize(vmin=v1.min(), vmax=v1.max())
-cbar = fig.colorbar(cm.ScalarMappable(norm=norm, cmap=cs.cmap), ticks=v1, ax=axs[1, j])
-cbar.ax.set_yticklabels(["{:1.0f}".format(i) for i in v1])
-cbar.ax.set_title(r"          $\mathrm{x10^{-3}}$", fontsize=10)
-
-
-v1 = np.array([0, 1])
-cs = axs[2, j].contourf(
-    gY, CNX, Gnorm_diff_norm, cmap=color_map, vmin=v1.min(), vmax=v1.max()
-)
-axs[2, j].set_yscale("log")
+# cs = axs[0, j].contourf(gY, CNX, G[0], cmap=color_map)
+# axs[0, j].set_yscale("log")
+# # v1= np.linspace(np.amin(G[0]), np.amax(G[0]),5)*1000
+# v1 = np.linspace(5, 15, 5)
 # norm = mpl.colors.Normalize(vmin=v1.min(), vmax=v1.max())
-cbar = fig.colorbar(
-    cm.ScalarMappable(norm=cs.norm, cmap=cs.cmap), ticks=v1, ax=axs[2, j]
-)
-cbar.ax.set_yticklabels(["{:1.1f}".format(i) for i in v1])
+# cbar = fig.colorbar(cm.ScalarMappable(norm=norm, cmap=cs.cmap), ticks=v1, ax=axs[0, j])
 
-maxv = [0.015, 0.15, 0.3, 0.6, 0.6]
-vstep = [0.001, 0.05, 0.1, 0.1, 0.1]
-for j in range(1, len(INORM)):
-    G = GG[j]
-    Gnorm_diff = G[0] - G[1]  # Gnorm_diff = DNRA- Denitrification
-    id = Gnorm_diff > 0
-    Gnorm_diff_norm = Gnorm_diff
-    Gnorm_diff_norm[:] = 0
-    Gnorm_diff_norm[id] = 1
-    [gY, CNX] = np.meshgrid(gamma_S, CNS)
+# # cbar= fig.colorbar(cs,ax=axs[0,j])
+# # v1=cbar.get_ticks()
+# cbar.ax.set_yticklabels(["{:1.0f}".format(i) for i in v1])
+# cbar.ax.set_title(r"         $\mathrm{x10^{-3}}$", fontsize=10)
 
-    v1 = np.arange(0, maxv[j] + vstep[j], vstep[j])
-    cs = axs[0, j].contourf(gY, CNX, G[0], cmap=color_map, vmin=v1.min(), vmax=v1.max())
-    axs[0, j].set_yscale("log")
-    # norm = mpl.colors.Normalize(vmin=v1.min(), vmax=v1.max())
-    cbar = fig.colorbar(
-        cm.ScalarMappable(norm=cs.norm, cmap=cs.cmap), ticks=v1, ax=axs[0, j]
-    )
-    cbar.ax.set_yticklabels(["{:1.1f}".format(i) for i in v1])
 
-    cs = axs[1, j].contourf(gY, CNX, G[1], cmap=color_map, vmin=v1.min(), vmax=v1.max())
-    axs[1, j].set_yscale("log")
-    # norm = mpl.colors.Normalize(vmin=v1.min(), vmax=v1.max())
-    cbar = fig.colorbar(
-        cm.ScalarMappable(norm=cs.norm, cmap=cs.cmap), ticks=v1, ax=axs[1, j]
-    )
-    cbar.ax.set_yticklabels(["{:1.1f}".format(i) for i in v1])
+# cs = axs[1, j].contourf(gY, CNX, G[1], cmap=color_map)
+# axs[1, j].set_yscale("log")
+# # v1= np.linspace(np.amin(G[1]), np.amax(G[1]),5)*1000
+# norm = mpl.colors.Normalize(vmin=v1.min(), vmax=v1.max())
+# cbar = fig.colorbar(cm.ScalarMappable(norm=norm, cmap=cs.cmap), ticks=v1, ax=axs[1, j])
+# cbar.ax.set_yticklabels(["{:1.0f}".format(i) for i in v1])
+# cbar.ax.set_title(r"          $\mathrm{x10^{-3}}$", fontsize=10)
 
-    v1 = np.array([0.0, 1.0])
-    cs = axs[2, j].contourf(
-        gY, CNX, Gnorm_diff_norm, cmap=color_map, vmin=v1.min(), vmax=v1.max()
-    )
-    axs[2, j].set_yscale("log")
-    # cbar= fig.colorbar(cs,ax=axs[2,j])
-    # norm = mpl.colors.Normalize(vmin=v1.min(), vmax=v1.max())
-    cbar = fig.colorbar(
-        cm.ScalarMappable(norm=cs.norm, cmap=cs.cmap), ticks=v1, ax=axs[2, j]
-    )
-    # cbar.ax.set_yticklabels(["{:1.1f}".format(i) for i in v1])
-for row in [0, 1, 2]:
-    axs[row, 0].set_ylabel(r"$CN_{ED}$", fontsize=labelfont)
-txt = ["(A)", "(B)", "(C)", "(D)", "(E)", "(F)"]
-for col in range(0, len(INORM)):
-    axs[2, col].set_xlabel(r"$\gamma_{ED}$", fontsize=labelfont - 2)
-    axs[0, col].set_title(
-        txt[col] + "\n" + r"$I_{norm} =" + str(INORM[col]) + "$", fontsize=labelfont - 2
-    )
-fig.tight_layout()
-fig.savefig("fig/png/FigureS3.png", dpi=300)
-fig.savefig("fig/svg/FigureS3.svg", dpi=300)
-plt.show()
+
+# v1 = np.array([0, 1])
+# cs = axs[2, j].contourf(
+#     gY, CNX, Gnorm_diff_norm, cmap=color_map, vmin=v1.min(), vmax=v1.max()
+# )
+# axs[2, j].set_yscale("log")
+# # norm = mpl.colors.Normalize(vmin=v1.min(), vmax=v1.max())
+# cbar = fig.colorbar(
+#     cm.ScalarMappable(norm=cs.norm, cmap=cs.cmap), ticks=v1, ax=axs[2, j]
+# )
+# cbar.ax.set_yticklabels(["{:1.1f}".format(i) for i in v1])
+
+# maxv = [0.015, 0.15, 0.3, 0.6, 0.6]
+# vstep = [0.001, 0.05, 0.1, 0.1, 0.1]
+# for j in range(1, len(INORM)):
+#     G = GG[j]
+#     Gnorm_diff = G[0] - G[1]  # Gnorm_diff = DNRA- Denitrification
+#     id = Gnorm_diff > 0
+#     Gnorm_diff_norm = Gnorm_diff
+#     Gnorm_diff_norm[:] = 0
+#     Gnorm_diff_norm[id] = 1
+#     [gY, CNX] = np.meshgrid(gamma_S, CNS)
+
+#     v1 = np.arange(0, maxv[j] + vstep[j], vstep[j])
+#     cs = axs[0, j].contourf(gY, CNX, G[0], cmap=color_map, vmin=v1.min(), vmax=v1.max())
+#     axs[0, j].set_yscale("log")
+#     # norm = mpl.colors.Normalize(vmin=v1.min(), vmax=v1.max())
+#     cbar = fig.colorbar(
+#         cm.ScalarMappable(norm=cs.norm, cmap=cs.cmap), ticks=v1, ax=axs[0, j]
+#     )
+#     cbar.ax.set_yticklabels(["{:1.1f}".format(i) for i in v1])
+
+#     cs = axs[1, j].contourf(gY, CNX, G[1], cmap=color_map, vmin=v1.min(), vmax=v1.max())
+#     axs[1, j].set_yscale("log")
+#     # norm = mpl.colors.Normalize(vmin=v1.min(), vmax=v1.max())
+#     cbar = fig.colorbar(
+#         cm.ScalarMappable(norm=cs.norm, cmap=cs.cmap), ticks=v1, ax=axs[1, j]
+#     )
+#     cbar.ax.set_yticklabels(["{:1.1f}".format(i) for i in v1])
+
+#     v1 = np.array([0.0, 1.0])
+#     cs = axs[2, j].contourf(
+#         gY, CNX, Gnorm_diff_norm, cmap=color_map, vmin=v1.min(), vmax=v1.max()
+#     )
+#     axs[2, j].set_yscale("log")
+#     # cbar= fig.colorbar(cs,ax=axs[2,j])
+#     # norm = mpl.colors.Normalize(vmin=v1.min(), vmax=v1.max())
+#     cbar = fig.colorbar(
+#         cm.ScalarMappable(norm=cs.norm, cmap=cs.cmap), ticks=v1, ax=axs[2, j]
+#     )
+#     # cbar.ax.set_yticklabels(["{:1.1f}".format(i) for i in v1])
+# for row in [0, 1, 2]:
+#     axs[row, 0].set_ylabel(r"$CN_{OM}$", fontsize=labelfont)
+# txt = ["(A)", "(B)", "(C)", "(D)", "(E)", "(F)"]
+# for col in range(0, len(INORM)):
+#     axs[2, col].set_xlabel(r"$\gamma_{OM}$", fontsize=labelfont - 2)
+#     axs[0, col].set_title(
+#         txt[col] + "\n" + r"$I_{norm} =" + str(INORM[col]) + "$", fontsize=labelfont - 2
+#     )
+# fig.tight_layout()
+# fig.savefig("fig/tif/FigureS3.tif", dpi=300)
+# fig.savefig("fig/svg/FigureS3.svg", dpi=300)
+# plt.show()
 
 
 # %% [markdown]
-# # Figure A4
+# # Figure S
 
 # %%
 
@@ -1047,7 +1047,7 @@ for m in range(0, len(gamma_S)):
     axs[4].plot(CNS, NEA[:, 1], linestyle=lstyle[1], linewidth=3, color=LC[m])
 for a in axs:
     a.set_xscale("log")
-    a.set_xlabel(r"$CN_{ED}$", fontsize=labelfont)
+    a.set_xlabel(r"$CN_{OM}$", fontsize=labelfont)
     a.tick_params(axis="x", labelsize=axisfont)
     a.tick_params(axis="y", labelsize=axisfont)
 axs[0].set_title(r"$G_{norm}$", fontsize=labelfont)
@@ -1072,7 +1072,7 @@ lhlist = []
 lstr = []
 for i in range(0, len(gamma_S)):
     (p1,) = axs[0].plot(np.nan, np.nan, linestyle=lstyle[0], color=LC[i], linewidth=5)
-    lstr.append(r"$\gamma_{ED}=$" + str(gamma_S[i]))
+    lstr.append(r"$\gamma_{OM}=$" + str(gamma_S[i]))
     lhlist.append(p1)
 axs[0].legend(
     lhlist,
@@ -1085,13 +1085,13 @@ axs[0].legend(
 )
 axs[0].add_artist(leg1)
 fig.tight_layout()
-fig.savefig("fig/png/FigureS_not_included.png", dpi=300)
+fig.savefig("fig/tif/FigureS_not_included.tif", dpi=300)
 fig.savefig("fig/svg/FigureS_not_included.svg", dpi=300)
 plt.show()
 
 
 # %% [markdown]
-# #  Figure A5
+# #  Figure S3
 
 # %%
 
@@ -1118,7 +1118,7 @@ for j in range(0, len(INORM)):
                 Gnorm[i] = np.minimum(emax_S, CNB * (1 / CNS[i] + INORM[j]))
         ax.plot(CNS, Gnorm, linestyle=lstyle[j], linewidth=lw[j], color=LC[m])
 plt.ylabel(r"${G_{norm}}$", fontsize=labelfont)
-plt.xlabel(r"${CN_{ED}}$", fontsize=labelfont)
+plt.xlabel(r"${CN_{OM}}$", fontsize=labelfont)
 plt.ylim([0.005, 1])
 plt.yscale("log")
 plt.xscale("log")
@@ -1126,7 +1126,7 @@ lhlist = []
 lstr = []
 for j in gamma_S:
     lstr.append(str(j))
-leg1 = ax.legend(lstr, loc="lower left", frameon=False, title=r"$\gamma_{ED}}$")
+leg1 = ax.legend(lstr, loc="lower left", frameon=False, title=r"$\gamma_{OM}}$")
 for i in leg1.get_lines():
     i.set_lw(3)
 lstr = []
@@ -1137,13 +1137,13 @@ for i in range(0, len(INORM)):
 ax.legend(lhlist, lstr, loc="upper right", frameon=False)
 ax.add_artist(leg1)
 ax.grid(True, which="both")
-fig.savefig("fig/png/FigureS4.png", dpi=300)
-fig.savefig("fig/svg/FigureS4.svg", dpi=300)
+fig.savefig("fig/tif/FigureS3.tif", dpi=300)
+fig.savefig("fig/svg/FigureS3.svg", dpi=300)
 plt.show()
 
 
 # %% [markdown]
-# # Figure A6
+# # Figure S4
 
 # %%
 
@@ -1215,10 +1215,10 @@ for i in range(len(axs)):
     axs[i][0].text(
         0.0, 1.05, fcaption[i], transform=axs[i][0].transAxes, fontsize=labelfont
     )
-axs[2][0].set_xlabel(r"$\gamma_{ED}$", fontsize=labelfont)
-axs[3][0].set_xlabel(r"$\gamma_{ED}$", fontsize=labelfont)
-axs[0][0].set_ylabel(r"$CN_{ED}$", fontsize=labelfont)
-axs[2][0].set_ylabel(r"$CN_{ED}$", fontsize=labelfont)
+axs[2][0].set_xlabel(r"$\gamma_{OM}$", fontsize=labelfont)
+axs[3][0].set_xlabel(r"$\gamma_{OM}$", fontsize=labelfont)
+axs[0][0].set_ylabel(r"$CN_{OM}$", fontsize=labelfont)
+axs[2][0].set_ylabel(r"$CN_{OM}$", fontsize=labelfont)
 
 axs[0][0].text(
     0.4, 0.8, "N limited", transform=axs[0][0].transAxes, fontsize=labelfont, color="w"
@@ -1291,6 +1291,6 @@ axs[3][0].text(
 )
 
 fig.tight_layout()
-fig.savefig("fig/png/FigureS5.png", dpi=300)
-fig.savefig("fig/svg/FigureS5.svg", dpi=300)
+fig.savefig("fig/tif/FigureS4.tif", dpi=300)
+fig.savefig("fig/svg/FigureS4.svg", dpi=300)
 plt.show()
