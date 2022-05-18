@@ -3,7 +3,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20@ArjunChakrawal)](https://twitter.com/ArjunChakrawal)
 
-This repository contains the python code used to create all the figures in the accompanying manuscript [Interacting Bioenergetic and Stoichiometric Controls on Microbial Growth](https://doi.org/10.3389/fmicb.2022.859063) published in Frontiers of Microbiolog as a part of theresearch topic [Modeling the Link Between Microbial Ecology and Biogeochemical Process Dynamics](https://www.frontiersin.org/research-topics/20079#articles)
+This repository contains the python code used to generate figures in the accompanying manuscript [Interacting Bioenergetic and Stoichiometric Controls on Microbial Growth](https://doi.org/10.3389/fmicb.2022.859063) published in Frontiers of Microbiolog as a part of theresearch topic [Modeling the Link Between Microbial Ecology and Biogeochemical Process Dynamics](https://www.frontiersin.org/research-topics/20079#articles)
 
 <img src="/Figure1.svg" width="600">
 
