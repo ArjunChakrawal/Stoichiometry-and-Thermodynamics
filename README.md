@@ -13,6 +13,4 @@ Click on the binder badge above. It would open a Jupyter Lab session on Binder, 
 
 Contact: [arjun.chakrawal@natgeo.su.se](mailto:arjun.chakrawal@natgeo.su.se)
 
-
-### Collaborations
 We welcome collaborations.
