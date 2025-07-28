@@ -542,7 +542,7 @@ lhlist = []
 lstr = []
 for j in gamma_S:
     lstr.append(str(j))
-leg1 = ax.legend(lstr, loc="lower left", frameon=False, title=r"$\gamma_{OM}}$")
+leg1 = ax.legend(lstr, loc="lower left", frameon=False, title=r"$\gamma_{OM}$")
 
 lstr = []
 for i in range(0, len(INORM)):
@@ -1126,7 +1126,7 @@ lhlist = []
 lstr = []
 for j in gamma_S:
     lstr.append(str(j))
-leg1 = ax.legend(lstr, loc="lower left", frameon=False, title=r"$\gamma_{OM}}$")
+leg1 = ax.legend(lstr, loc="lower left", frameon=False, title=r"$\gamma_{OM}$")
 for i in leg1.get_lines():
     i.set_lw(3)
 lstr = []
